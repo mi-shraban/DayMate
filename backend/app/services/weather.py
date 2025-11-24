@@ -4,7 +4,7 @@ import asyncio
 from dotenv import load_dotenv
 from datetime import datetime
 
-load_dotenv()
+# load_dotenv(os.path.join(os.path.dirname(__file__), "../../.env"))
 
 API_KEY = os.getenv("OPENWEATHER_API_KEY")
 BASE = "https://api.openweathermap.org/data/2.5/onecall"
@@ -99,7 +99,7 @@ async def print_weather(lat, lon):
 
 # Example usage
 if __name__ == "__main__":
-	# Example: New York City coordinates
+	# Example: Dhaka city coordinates
 	asyncio.run(print_weather(23.8041, 90.4152))
 
 # Try other locations:

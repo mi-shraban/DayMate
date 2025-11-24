@@ -2,6 +2,9 @@ import os
 import httpx
 import asyncio
 from datetime import datetime
+from dotenv import load_dotenv
+
+# load_dotenv(os.path.join(os.path.dirname(__file__), "../../.env"))
 
 API_KEY = os.getenv("NEWSAPI_KEY")
 BASE = "https://newsapi.org/v2/everything"

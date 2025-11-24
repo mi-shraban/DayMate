@@ -1,8 +1,14 @@
+import os
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-import os
 from .services import weather, news, planner
+from dotenv import load_dotenv
+from pathlib import Path
+
+
+env_path = Path(__file__).resolve().parent.parent.parent / '.env'
+load_dotenv(dotenv_path=env_path)
 
 
 app = FastAPI(title="DayMate API")

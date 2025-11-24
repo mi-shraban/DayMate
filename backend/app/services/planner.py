@@ -1,5 +1,9 @@
 import os
 import httpx
+# from dotenv import load_dotenv
+#
+# load_dotenv(os.path.join(os.path.dirname(__file__), "../../.env"))
+
 
 AI_KEY = os.getenv("AI_API_KEY")
 AI_URL = os.getenv("AI_URL")
