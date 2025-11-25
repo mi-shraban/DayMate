@@ -1,4 +1,3 @@
-# backend/app/services/ai_service.py
 import requests
 from app.core.config import settings
 
