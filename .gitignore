@@ -1,5 +1,5 @@
+.idea/
+venv/
+pycache/
 node_modules/
 backend/.env
-.venv/
-__pycache__/
-.idea/
