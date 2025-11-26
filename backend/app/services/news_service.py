@@ -1,18 +1,18 @@
-# backend/app/services/news_service.py
 import requests
 from app.core.config import settings
 
 
 def get_local_news(city_name: str = settings.DEFAULT_CITY) -> dict:
     # NewsData.io endpoint
-    url = "https://newsdata.io/api/1/news"
+    url = "https://newsdata.io/api/1/latest?"
 
     params = {
         'apikey': settings.NEWSDATA_API_KEY,
         'q': city_name,
         'language': 'en',
         'country': 'bd',
-        'size': 5
+        'size': 5,
+        'category': ['crime', 'domestic', 'sports']
     }
 
     try:

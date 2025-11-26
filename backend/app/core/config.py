@@ -10,8 +10,8 @@ class Settings(BaseSettings):
     GEMINI_API_URL: str = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
 
     # Make dynamic later
-    DEFAULT_LAT: float = 40.7128  # Default: NewYork city
-    DEFAULT_LON: float = -74.0060
+    DEFAULT_LAT: float = 23.8041    # Default: Dhaka city
+    DEFAULT_LON: float = 90.4152
     DEFAULT_CITY: str = "Dhaka"
 
     class Config:
