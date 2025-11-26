@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchDailyPlan } from '../services/api';
 import WeatherDisplay from '../components/WeatherDisplay';
+import ForecastDisplay from '../components/ForecastDisplay';
 import NewsDisplay from '../components/NewsDisplay';
 import Recommendations from '../components/Recommendations';
 
@@ -15,10 +16,12 @@ const Dashboard = () => {
         setLoading(true);
         setError(null);
         const data = await fetchDailyPlan();
+        console.log('Received daily plan:', data);
+        console.log('Forecast data:', data.forecast);
         setDailyPlan(data);
       } catch (err) {
         setError('Failed to load daily plan. Please try again later.');
-        console.error(err); // Log for debugging
+        console.error('Error loading plan:', err);
       } finally {
         setLoading(false);
       }
@@ -36,6 +39,7 @@ const Dashboard = () => {
       {dailyPlan && (
         <>
           <WeatherDisplay weatherData={dailyPlan.weather} />
+          <ForecastDisplay forecastData={dailyPlan.forecast} />
           <NewsDisplay newsData={dailyPlan.news} />
           <Recommendations recommendations={dailyPlan.recommendations} />
         </>

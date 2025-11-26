@@ -14,6 +14,10 @@ class Settings(BaseSettings):
     DEFAULT_LON: float = 90.4152
     DEFAULT_CITY: str = "Dhaka"
 
+    # Set to True to use One Call API 3.0 (requires subscription, 1000 free calls/day)
+    # Set to False to use 5-day/3-hour forecast (completely free)
+    USE_ONECALL_API: bool = False
+
     class Config:
         env_file = ".env"
 
